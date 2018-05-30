@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 {
+  margin: 0;
+  line-height: 1;
+}
+img {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.box-shadow-1 {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 999;
+  background: transparent;
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1170px;
+  height: 100%;
+}
+.header__logo {
+  margin-right: auto;
+  font-size: 1.8em;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+}
+.header__logo::before {
+  content: 'D';
+  position: absolute;
+  top: 0;
+  left: -3px;
+  color: #dc3545;
+  z-index: -1;
+}
+.header__logo::after {
+  content: '.';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  color: #dc3545;
+  z-index: -1;
+}
+.header__nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+.header__nav__item {
+  padding: 0 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  height: 300px;
+  background: #f7f7f7;
+}
+.slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 23, 23, 0.65);
+  z-index: 10;
+}
+.slider__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/luca-bravo-210216-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slider__limiter {
+  width: 100%;
+  max-width: 1170px;
+  z-index: 50;
+}
+.slider__heading {
+  display: inline-block;
+  line-height: 1.4;
+  width: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0;
+}
+.about__container {
+  width: 100%;
+  max-width: 1170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.about__images {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.about__text {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 120px;
+}
+.about__image {
+  flex: 1;
+  position: relative;
+  height: 425px;
+  margin: 0 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.about__image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 23, 23, 0.15);
+  z-index: 10;
+}
+.about__image--img1 {
+  background-image: url('../images/markus-spiske-303121-unsplash.jpg');
+  background-position: center;
+}
+.about__image--img2 {
+  background-image: url('../images/oscar-nilsson-13605-unsplash.jpg');
+  background-position: 0 0;
+}
+.about__image::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -100px;
+  width: 360px;
+  height: 280px;
+  background-image: url(../images/bench-accounting-49909-unsplash.jpg);
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-position: -330px -320px;
+  z-index: 20;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.about__subtitle {
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #575757;
+}
+.about__subtitle::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: -60px;
+  width: 30px;
+  height: 1px;
+  background: #dc3545;
+}
+.about__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  color: #171717;
+}
+.about__description {
+  line-height: 2;
+  color: #707070;
+}
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 200px 0;
+  width: 90%;
+  margin: 80px auto 0;
+  background-image: url('../images/wesson-wang-110739-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.services__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: white;
+  z-index: 50;
+  margin-bottom: 8px;
+  position: relative;
+}
+.services__heading::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.services__subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  z-index: 50;
+}

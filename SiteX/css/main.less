@@ -1,0 +1,339 @@
+//colors
+@black17: #171717;
+@edge-color: #dc3545;
+// common
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+// flex layout
+.flex(@direction, @justify-content, @align-items) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify-content;
+    align-items: @align-items;
+}
+
+.flex(@justify-content, @align-items) {
+    display: flex;
+    justify-content: @justify-content;
+    align-items: @align-items;
+}
+
+.flex-row-c() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-hc() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-row-vc() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-column-c() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column-hc() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-column-vc() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+//fonts
+.font(@font-size, @font-weight) {
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+.montserrat(@font-size, @font-weight) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+//layout
+.layout() {
+    width: 100%;
+    max-width: 1170px;
+}
+
+//overlay
+.full-overlay(@z-index, @color) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: @color;
+    z-index: @z-index;
+}
+
+//box-shadow style
+.box-shadow-1 {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, .03), 0 1px 2px rgba(0, 0, 0, .3), 0 8px 12px rgba(0, 0, 0, .1);
+}
+
+// header
+.header {
+    .flex-row-c();
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+    background: transparent;
+    &__container {
+        .flex-row-c();
+        .layout();
+        height: 100%;
+    }
+    &__logo {
+        margin-right: auto;
+        font-size: 1.8em;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+        line-height: 1;
+        color: fade(white, 85%);
+        &::before {
+            content: 'D';
+            position: absolute;
+            top: 0;
+            left: -3px;
+            color: @edge-color;
+            z-index: -1;
+        }
+        &::after {
+            content: '.';
+            position: absolute;
+            top: 0;
+            right: -8px;
+            color: @edge-color;
+            z-index: -1;
+        }
+    }
+    &__nav {
+        &__list {
+            .flex-row-c();
+            color: fade(white, 75%);
+        }
+        &__item {
+            padding: 0 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    height: 300px;
+    background: #f7f7f7;
+    &::before {
+        .full-overlay(10, fade(@black17, 65%));
+    }
+    &__item {
+        .flex-row-c();
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/luca-bravo-210216-unsplash.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__limiter {
+        .layout();
+        z-index: 50;
+    }
+    &__heading {
+        display: inline-block;
+        line-height: 1.4;
+        width: 50%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.8em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: white;
+    }
+}
+
+.about {
+    .flex-row-c();
+    padding: 120px 0;
+    &__container {
+        .layout();
+        .flex(row,
+        flex-start,
+        center);
+    }
+    &__images {
+        flex: 0 1 50%;
+        .flex-row-c();
+    }
+    &__text {
+        width: 40%;
+        .flex(column,
+        center,
+        flex-start);
+        padding-left: 120px;
+    }
+    &__image {
+        &::before {
+            .full-overlay(10,
+            fade(@black17, 15%));
+        }
+        flex: 1;
+        position: relative;
+        height: 425px;
+        margin: 0 12px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .box-shadow-1();
+        &--img1 {
+            background-image: url('../images/markus-spiske-303121-unsplash.jpg');
+            background-position: center;
+        }
+        &--img2 {
+            background-image: url('../images/oscar-nilsson-13605-unsplash.jpg');
+            background-position: 0 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -100px;
+            width: 360px;
+            height: 280px;
+            background-image: url(../images/bench-accounting-49909-unsplash.jpg);
+            background-size: 300%;
+            background-repeat: no-repeat;
+            background-position: -330px -320px;
+            z-index: 20;
+            .box-shadow-1();
+        }
+    }
+    &__subtitle {
+        position: relative;
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: lighten(@black17, 25%);
+        &::before {
+            content: '';
+            position: absolute;
+            top: ~"calc(50% - 2px)";
+            left: -60px;
+            width: 30px;
+            height: 1px;
+            background: @edge-color;
+        }
+    }
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 34px;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.3;
+        margin-bottom: 32px;
+        color: @black17;
+    }
+    &__description {
+        line-height: 2;
+        color: lighten(@black17, 35%);
+    }
+}
+
+.services {
+    .flex-column-c();
+    position: relative;
+    padding: 200px 0;
+    width: 90%;
+    margin: 80px auto 0;
+    background-image: url('../images/wesson-wang-110739-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::before {
+        .full-overlay(10,
+        fade(black,
+        60%));
+    }
+    &__heading {
+        .montserrat(42px,
+        300);
+        color: white;
+        z-index: 50;
+        margin-bottom: 8px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            background: fade(white, 80%);
+        }
+    }
+    &__subtitle {
+        .montserrat(16px,
+        300);
+        color: white;
+        z-index: 50;
+    }
+}
