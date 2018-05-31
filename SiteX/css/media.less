@@ -1,0 +1,110 @@
+//Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {}
+
+//Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {}
+
+// Medium devices (landscape tablets, 768px and up)
+@media only screen and (max-width: 1200px) {
+    .header__container,
+    .slider__limiter,
+    .about__container,
+    .services__content,
+    .contact,
+    .footer__container {
+        width: 95%;
+    }
+    .slider {
+        &__heading {
+            width: 70%;
+        }
+    }
+    .about {
+        &__images {
+            flex: 1;
+        }
+        &__text {
+            flex: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .slider {
+        &__heading {
+            width: 90%;
+        }
+    }
+    .about {
+        &__container {
+            max-width: 85%;
+        }
+        &__text {
+            padding-left: 80px;
+        }
+    }
+    .portfolio {
+        &__project {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        &__container {
+            width: 90%;
+        }
+        &__nav {
+            display: none;
+            &--m {
+                display: block;
+            }
+        }
+    }
+    .slider {
+        &__limiter {
+            text-align: center;
+        }
+        &__heading {
+            width: 50%;
+        }
+    }
+    .about {
+        padding: 80px 0;
+        &__images {
+            flex-basis: 100%;
+            margin-bottom: 80px;
+        }
+        &__image {
+            &::after {
+                display: none;
+            }
+        }
+        &__text {
+            flex-basis: 100%;
+            padding: 0 30px;
+        }
+        &__subtitle {
+            font-size: 13px;
+            &::before {
+                display: none;
+            }
+        }
+    }
+    .services {
+        margin: 0 auto;
+        &__title-bg {
+            margin-top: 50px;
+            padding: 100px 0;
+        }
+        &__item {
+            flex-basis: 35%;
+        }
+    }
+    .contact {
+        &>.row {
+            width: 80%;
+        }
+    }
+}
