@@ -123,6 +123,31 @@ body {
     box-shadow: 0 6px 8px rgba(0, 0, 0, .03), 0 1px 2px rgba(0, 0, 0, .3), 0 8px 12px rgba(0, 0, 0, .1);
 }
 
+//heading
+.global {
+    &-title {
+        .montserrat(42px, 300);
+        color: @black17;
+        z-index: 50;
+        margin-bottom: 8px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 1px;
+            height: 30px;
+            background: fade(@edge-color, 80%);
+        }
+    }
+    &-subtitle {
+        .montserrat(16px, 300);
+        color: @black17;
+        z-index: 50;
+    }
+}
+
 // header
 .header {
     .flex-row-c();
@@ -147,15 +172,15 @@ body {
         line-height: 1;
         color: fade(white, 85%);
         &::before {
-            content: 'D';
+            content: '{';
             position: absolute;
             top: 0;
-            left: -3px;
+            left: -8px;
             color: @edge-color;
             z-index: -1;
         }
         &::after {
-            content: '.';
+            content: '}';
             position: absolute;
             top: 0;
             right: -8px;
@@ -176,6 +201,7 @@ body {
     }
 }
 
+// slider
 .slider {
     position: relative;
     width: 100%;
@@ -183,7 +209,7 @@ body {
     height: 300px;
     background: #f7f7f7;
     &::before {
-        .full-overlay(10, fade(@black17, 65%));
+        .full-overlay(10, rgba(0, 0, 0, .65));
     }
     &__item {
         .flex-row-c();
@@ -211,6 +237,7 @@ body {
     }
 }
 
+// about
 .about {
     .flex-row-c();
     padding: 120px 0;
@@ -242,14 +269,14 @@ body {
         .box-shadow-1();
         &::before {
             .full-overlay(10,
-            fade(@black17, 15%));
+            rgba(0, 0, 0, .15));
         }
         &--img1 {
-            background-image: url('../images/markus-spiske-303121-unsplash.jpg');
+            background-image: url('../images/markus-spiske-303121-unsplash-min.jpg');
             background-position: center;
         }
         &--img2 {
-            background-image: url('../images/oscar-nilsson-13605-unsplash.jpg');
+            background-image: url('../images/oscar-nilsson-13605-unsplash-min.jpg');
             background-position: 0 0;
         }
         &::after {
@@ -259,7 +286,7 @@ body {
             left: -100px;
             width: 360px;
             height: 280px;
-            background-image: url(../images/bench-accounting-49909-unsplash.jpg);
+            background-image: url(../images/bench-accounting-49909-unsplash-min.jpg);
             background-size: 300%;
             background-repeat: no-repeat;
             background-position: -330px -320px;
@@ -299,55 +326,46 @@ body {
     }
 }
 
+// services
 .services {
     width: 90%;
     margin: 80px auto 0;
     &__title-bg {
+        &>.global-title {
+            color: white;
+            &::before {
+                background: fade(white, 80%);
+            }
+        }
+        &>.global-subtitle {
+            color: white;
+        }
         .flex-column-c();
         position: relative;
         padding: 150px 0;
-        background-image: url('../images/wesson-wang-110739-unsplash.jpg');
+        background-image: url('../images/wesson-wang-110739-unsplash-min.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         &::before {
             .full-overlay(10,
-            fade(black,
-            60%));
+            rgba(0,
+            0,
+            0,
+            .65));
         }
-    }
-    &__title {
-        .montserrat(42px,
-        300);
-        color: white;
-        z-index: 50;
-        margin-bottom: 8px;
-        position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            width: 1px;
-            height: 30px;
-            background: fade(white, 80%);
-        }
-    }
-    &__subtitle {
-        .montserrat(16px,
-        300);
-        color: white;
-        z-index: 50;
     }
     &__content {
         .flex-row-c();
         .layout();
-        padding: 100px 0;
+        padding-top: 100px;
         margin: 0 auto;
+        flex-wrap: wrap;
     }
     &__item {
-        flex: 1 1 30%;
-        margin: 15px 25px;
+        flex: 1;
+        flex-basis: 25%;
+        margin: 15px 25px 60px;
         text-align: center;
     }
     &__icon {
@@ -365,5 +383,93 @@ body {
         font-size: 15px;
         color: lighten(@black17, 35%);
         line-height: 1.8;
+    }
+}
+
+// portfolio
+.portfolio {
+    width: 100%;
+    &__heading {
+        width: 100%;
+        padding: 100px 0 50px;
+        .flex-column-c();
+    }
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__project {
+        display: inline-block;
+        width: 25%;
+        height: 476px;
+        cursor: pointer;
+        position: relative;
+        &::before {
+            .full-overlay(1,
+            rgba(0,
+            0,
+            0,
+            .6));
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+        & span {
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0px;
+                height: 1px;
+                opacity: 0;
+                z-index: 10;
+                background: white;
+                transform-origin: 50% 50%;
+                transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+            }
+            &::after {
+                transform: none;
+            }
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+            & span::before,
+            & span::after {
+                top: 50%;
+                left: 47%;
+                opacity: 1;
+            }
+            & span::before {
+                width: 35px;
+                transform: rotate(180deg);
+            }
+            & span::after {
+                width: 35px;
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &-1 {
+            background-image: url('../images/jesus-kiteque-224069-unsplash-min.jpg');
+        }
+        &-2 {
+            background-image: url('../images/rawpixel-589084-unsplash-min.jpg');
+        }
+        &-3 {
+            background-image: url('../images/alex-6732-unsplash-min.jpg');
+        }
+        &-4 {
+            background-image: url('../images/oscar-nilsson-13605-unsplash-min.jpg');
+        }
     }
 }
