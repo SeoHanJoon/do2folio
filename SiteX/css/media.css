@@ -81,3 +81,17 @@
     width: 80%;
   }
 }
+@media only screen and (max-width: 600px) {
+  .slider__heading {
+    width: 100%;
+  }
+  .services__item {
+    flex-basis: 50%;
+  }
+  .input__wrap {
+    flex-basis: 50%;
+  }
+  .input__wrap:first-child {
+    margin-bottom: 20px;
+  }
+}

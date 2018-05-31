@@ -1,6 +1,4 @@
 //Extra small devices (phones, 600px and down)
-@media only screen and (max-width: 600px) {}
-
 //Small devices (portrait tablets and large phones, 600px and up)
 @media only screen and (min-width: 600px) {}
 
@@ -105,6 +103,27 @@
     .contact {
         &>.row {
             width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slider {
+        &__heading {
+            width: 100%;
+        }
+    }
+    .services {
+        &__item {
+            flex-basis: 50%;
+        }
+    }
+    .input {
+        &__wrap {
+            flex-basis: 50%;
+            &:first-child{
+                margin-bottom: 20px;
+            }
         }
     }
 }
