@@ -219,23 +219,20 @@ body {
         .flex(row,
         flex-start,
         center);
+        flex-wrap: wrap;
     }
     &__images {
-        flex: 0 1 50%;
+        flex: 1 0 50%;
         .flex-row-c();
     }
     &__text {
-        width: 40%;
+        flex: 1 0 40%;
         .flex(column,
         center,
         flex-start);
         padding-left: 120px;
     }
     &__image {
-        &::before {
-            .full-overlay(10,
-            fade(@black17, 15%));
-        }
         flex: 1;
         position: relative;
         height: 425px;
@@ -243,6 +240,10 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         .box-shadow-1();
+        &::before {
+            .full-overlay(10,
+            fade(@black17, 15%));
+        }
         &--img1 {
             background-image: url('../images/markus-spiske-303121-unsplash.jpg');
             background-position: center;
@@ -299,21 +300,23 @@ body {
 }
 
 .services {
-    .flex-column-c();
-    position: relative;
-    padding: 200px 0;
     width: 90%;
     margin: 80px auto 0;
-    background-image: url('../images/wesson-wang-110739-unsplash.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    &::before {
-        .full-overlay(10,
-        fade(black,
-        60%));
+    &__title-bg {
+        .flex-column-c();
+        position: relative;
+        padding: 150px 0;
+        background-image: url('../images/wesson-wang-110739-unsplash.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &::before {
+            .full-overlay(10,
+            fade(black,
+            60%));
+        }
     }
-    &__heading {
+    &__title {
         .montserrat(42px,
         300);
         color: white;
@@ -335,5 +338,32 @@ body {
         300);
         color: white;
         z-index: 50;
+    }
+    &__content {
+        .flex-row-c();
+        .layout();
+        padding: 100px 0;
+        margin: 0 auto;
+    }
+    &__item {
+        flex: 1 1 30%;
+        margin: 15px 25px;
+        text-align: center;
+    }
+    &__icon {
+        display: inline-block;
+        font-size: 32px;
+        margin-bottom: 18px;
+        color: darken(@edge-color, 10%);
+    }
+    &__heading {
+        font-size: 18px;
+        margin-bottom: 24px;
+        letter-spacing: 2px;
+    }
+    &__description {
+        font-size: 15px;
+        color: lighten(@black17, 35%);
+        line-height: 1.8;
     }
 }
