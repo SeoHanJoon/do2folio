@@ -43,15 +43,15 @@ window.addEventListener("resize", fitHeightToWidth);
 
 // float button event
 const floatBtn = document.querySelector('.float-btn--circle');
-floatBtn.onclick = function () {
+floatBtn.onclick = () => {
     window.scroll({
         top: 0,
         behavior: 'smooth'
-    });
+    })
 }
 
 // scroll to section
-const navLink = document.querySelectorAll('.header__nav__item a');
+const navLink = document.querySelectorAll('header a');
 
 (function setLink() {
     for (const iterator of navLink) {
@@ -59,8 +59,8 @@ const navLink = document.querySelectorAll('.header__nav__item a');
     }
 })();
 
-function linkTo(element) {
-    element.preventDefault();
+function linkTo(e) {
+    e.preventDefault();
 
     const g = this.getAttribute('href');
     const t = document.querySelector('.' + g);

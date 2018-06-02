@@ -335,21 +335,22 @@ body {
         .modal {
             .flex-row-c();
             align-items: center;
-            &__container{
-                width: 80%;
+            &__container {
+                width: 55%;
                 height: 60%;
                 overflow: hidden;
             }
-            &__image{
+            &__image {
+                width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 object-position: center;
             }
         }
-        
     }
 }
-.modal{
+
+.modal {
     display: none;
     position: fixed;
     width: 100%;
@@ -358,11 +359,8 @@ body {
     left: 0;
     z-index: 1000;
     background: rgba(0, 0, 0, .65);
-    &__container{
-        width: 60%;
-        height: auto;
-    }
 }
+
 // slider
 .slider {
     position: relative;
