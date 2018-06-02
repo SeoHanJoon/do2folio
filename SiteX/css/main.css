@@ -223,6 +223,39 @@ body.scrolling .header__nav--m .burger span {
 body.scrolling .float-btn--circle {
   opacity: 1;
 }
+body.lock {
+  overflow: hidden;
+}
+body.lock .modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body.lock .modal__container {
+  width: 80%;
+  height: 60%;
+  overflow: hidden;
+}
+body.lock .modal__image {
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.65);
+}
+.modal__container {
+  width: 60%;
+  height: auto;
+}
 .slider {
   position: relative;
   width: 100%;
@@ -467,9 +500,9 @@ body.scrolling .float-btn--circle {
 .portfolio__project {
   display: inline-block;
   width: 25%;
-  height: 476px;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 .portfolio__project::before {
   content: '';
@@ -487,6 +520,7 @@ body.scrolling .float-btn--circle {
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   -o-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
 }
 .portfolio__project span::before,
 .portfolio__project span::after {
@@ -525,24 +559,9 @@ body.scrolling .float-btn--circle {
   width: 35px;
   transform: rotate(90deg);
 }
-.portfolio__img {
-  display: block;
-  width: 100%;
+.portfolio__image {
   height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.portfolio__img-1 {
-  background-image: url('../images/jesus-kiteque-224069-unsplash-min.jpg');
-}
-.portfolio__img-2 {
-  background-image: url('../images/rawpixel-589084-unsplash-min.jpg');
-}
-.portfolio__img-3 {
-  background-image: url('../images/alex-6732-unsplash-min.jpg');
-}
-.portfolio__img-4 {
-  background-image: url('../images/oscar-nilsson-13605-unsplash-min.jpg');
+  object-fit: contain;
 }
 .contact {
   display: flex;

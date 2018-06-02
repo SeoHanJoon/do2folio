@@ -94,4 +94,7 @@
   .input__wrap:first-child {
     margin-bottom: 20px;
   }
+  .portfolio__project {
+    width: 100%;
+  }
 }

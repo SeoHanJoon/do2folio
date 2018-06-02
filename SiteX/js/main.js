@@ -1,12 +1,14 @@
+const body = document.body;
+
 // sticky nav
 function stickyNavigation() {
     var headerHeight = document.querySelector(".header").clientHeight;
     var scrollY = window.scrollY;
 
     if (headerHeight <= scrollY) {
-        document.body.classList.add('scrolling');
+        body.classList.add('scrolling');
     } else {
-        document.body.classList.remove('scrolling');
+        body.classList.remove('scrolling');
     }
 }
 window.addEventListener("scroll", stickyNavigation);
@@ -26,16 +28,14 @@ function resizeSlider() {
     const windowHeight = window.innerHeight;
 
 }
+
 // fit project image height to width
 function fitHeightToWidth() {
     const projects = document.querySelectorAll('.portfolio__project');
-
-    // for (let i = 0; i < projects.length; i++) {
-    //     projects[i].style.height = projects[i].clientWidth + 'px';
-    // }
+    const height = projects[0].clientWidth;
 
     for (const iterator of projects) {
-        iterator.style.height = iterator.clientWidth + 'px';
+        iterator.style.height = height + 'px';
     }
 }
 fitHeightToWidth();
@@ -69,4 +69,38 @@ function linkTo(element) {
         top: t.offsetTop - 80,
         behavior: 'smooth'
     });
+}
+
+//project inlarge image
+(function inlargeInit() {
+    const images = document.querySelectorAll('.portfolio__project img');
+
+    for (const iterator of images) {
+        iterator.onclick = inlargeImage;
+    }
+
+})();
+
+function inlargeImage() {
+    body.classList.add('lock');
+    const img = document.querySelector('.modal__image');
+    img.setAttribute('src', this.getAttribute('src'));
+    img.setAttribute('alt', this.getAttribute('alt'));
+
+    document.querySelector('.modal').onclick = () => {
+        body.classList.remove('lock');
+    }
+}
+
+//IE,Edge fix Object-fit
+if ('objectFit' in document.documentElement.style === false) {
+    const imgContainer = document.querySelectorAll('.portfolio__project');
+    const modalContainer = document.querySelector('.modal__container');
+
+    for (const iterator of imgContainer) {
+        const imgSrc = iterator.querySelector('img').src;
+        iterator.querySelector('img').style.display = 'none';
+        iterator.style.backgroundSize = 'cover';
+        iterator.style.backgroundImage = 'url(./images' + imgSrc.split('images')[1] + ')';
+    }
 }

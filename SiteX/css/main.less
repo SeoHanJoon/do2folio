@@ -300,36 +300,69 @@ body {
     }
 }
 
-body.scrolling {
-    .header {
-        background-color: white;
-        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .1);
-        &__logo {
-            color: @black17;
-        }
-        &__nav {
-            &__list {
-                color: fade(@black17, 75%);
+body {
+    &.scrolling {
+        .header {
+            background-color: white;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .1);
+            &__logo {
+                color: @black17;
             }
-            &__item {
-                &:hover {
-                    color: @black17;
+            &__nav {
+                &__list {
+                    color: fade(@black17, 75%);
                 }
-            }
-            &--m {
-                & .burger {
-                    & span {
-                        background: @black17;
+                &__item {
+                    &:hover {
+                        color: @black17;
+                    }
+                }
+                &--m {
+                    & .burger {
+                        & span {
+                            background: @black17;
+                        }
                     }
                 }
             }
         }
+        .float-btn--circle {
+            opacity: 1;
+        }
     }
-    .float-btn--circle {
-        opacity: 1;
+    &.lock {
+        overflow: hidden;
+        .modal {
+            .flex-row-c();
+            align-items: center;
+            &__container{
+                width: 80%;
+                height: 60%;
+                overflow: hidden;
+            }
+            &__image{
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        
     }
 }
-
+.modal{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .65);
+    &__container{
+        width: 60%;
+        height: auto;
+    }
+}
 // slider
 .slider {
     position: relative;
@@ -534,9 +567,9 @@ body.scrolling {
     &__project {
         display: inline-block;
         width: 25%;
-        height: 476px;
         cursor: pointer;
         position: relative;
+        overflow: hidden;
         &::before {
             .full-overlay(1,
             rgba(0,
@@ -545,6 +578,7 @@ body.scrolling {
             .6));
             opacity: 0;
             .transition(ease-out-cubic);
+            pointer-events: none;
         }
         & span {
             &::before,
@@ -585,24 +619,9 @@ body.scrolling {
             }
         }
     }
-    &__img {
-        display: block;
-        width: 100%;
+    &__image {
         height: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        &-1 {
-            background-image: url('../images/jesus-kiteque-224069-unsplash-min.jpg');
-        }
-        &-2 {
-            background-image: url('../images/rawpixel-589084-unsplash-min.jpg');
-        }
-        &-3 {
-            background-image: url('../images/alex-6732-unsplash-min.jpg');
-        }
-        &-4 {
-            background-image: url('../images/oscar-nilsson-13605-unsplash-min.jpg');
-        }
+        object-fit: contain;
     }
 }
 
