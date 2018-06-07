@@ -132,12 +132,12 @@ $(function() {
 
 	/* 구글 맵 */
 	$.fn.initialize_map = function(){
-		var Y_point = 37.5116656;
-		var X_point = 127.0349142;
+		var Y_point = 37.619011;
+		var X_point = 126.920743;
 		var zoomLevel = 17;
 		var markerTitle = "테스트구글맵";
 		var markerMaxWidth = 300;
-		var image = './images/gmap_marker_v2_on.png';
+		var image = './images/gmap_marker_v3_on.png';
 		var myLatlng = new google.maps.LatLng(Y_point, X_point);
 		var mapOptions = {
 			center: myLatlng,
@@ -241,28 +241,6 @@ function setMovePage(move_no){
 
 $(document).ready(function(){
 
-	/* 모바일 체크 */
-	/*var filter = "win16|win32|win64|mac|macintel",
-		navi = true;
-	if(navigator.platform){
-		if(0 > filter.indexOf(navigator.platform.toLowerCase())){
-			//모바일임
-			navi = false;
-
-			//모바일 페이스북 링크 교체
-			var fb_link = 'fb://facewebmodal/f?href=https://www.facebook.com/cashcall01/';
-			$('.menu_btn .fb a').attr('href',fb_link);
-			$('#slide-menu .ico_facebook a').attr('href',fb_link);
-			$('.page_v8 .fb a').attr('href',fb_link);
-			$('.wrap_footer .social .facebook a').attr('href',fb_link);
-			//모바일 플레이스토어 링크 교체
-			var ps_link = 'market://details?id=kr.co.monkid.cashcall';
-			$('.menu_btn .ps a').attr('href',ps_link);
-			$('#slide-menu .ico_playstore a').attr('href',ps_link);
-			$('.page_v8 .ps a').attr('href',ps_link);
-			$('.wrap_footer .social .playstore a').attr('href',ps_link);
-		}
-	}*/
 	var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
 	var navi = false;
 
@@ -273,13 +251,13 @@ $(document).ready(function(){
 			currentOS = "ios";
 		}else{
 			//모바일 페이스북 링크 교체
-			var fb_link = 'fb://facewebmodal/f?href=https://www.facebook.com/cashcall01/';
+			var fb_link = 'fb://facewebmodal/f?href=https://www.facebook.com/';// + 'test/';
 			$('.menu_btn .fb a').attr('href',fb_link);
 			$('#slide-menu .ico_facebook a').attr('href',fb_link);
 			$('.page_v8 .fb a').attr('href',fb_link);
 			$('.wrap_footer .social .facebook a').attr('href',fb_link);
 			//모바일 플레이스토어 링크 교체
-			var ps_link = 'market://details?id=kr.co.monkid.cashcall';
+			var ps_link = 'market://details?id='; // + 'test';
 			$('.menu_btn .ps a').attr('href',ps_link);
 			$('#slide-menu .ico_playstore a').attr('href',ps_link);
 			$('.page_v8 .ps a').attr('href',ps_link);

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<title>Travel Tour - 아름다운 여행지를 소개해드립니다</title>
+	<script type="text/javascript" src="./jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="./common.js?v=1701040634"></script>
+	<script type="text/javascript" src="./scrolloverflow.js"></script>
+	<script type="text/javascript" src="./jquery.fullPage.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCShvYg8fbeKjy77zURSsKrhxxfKEceO5g&sensor=false"></script>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,900,900is' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="./common.css?v=1701040634" />
+	<link type="text/css" rel="stylesheet" href="./jquery.fullPage.css" />
+	<link rel="shortcut icon" href="./images/traveltour_favicon.ico">
+	<link rel="icon" href="./images/traveltour_favicon.png">
+</head>
+<body>
+	<div id="wrap">
+		<!-- Header 시작 -->
+		<header id="header" class="fix_header">
+			<div class="top_menu">
+				<h2 id="fix_logo"><a href="./">LOGO</a></h2>
+				<ul class="menu_btn">
+					<li class="nav_sns fb">
+						<a href="#" onclick="alert('현재 페이스북 링크가 없습니다!'); return false;">facebook</a>
+					</li>
+					<li class="nav_sns ps">
+						<a href="#" onclick="alert('현재 플레이스토어 링크가 없습니다!'); return false;">playstore</a>
+					</li>
+					<li class="nav_btn_wrap">
+						<button class="nav_btn menu-trigger" href="#toggle-nav">
+							<img src="./images/menu_btn_toggle.png" />
+						</button>
+					</li>
+				</ul>
+			</div>
+			<nav id="slide-menu">
+				<ul>
+					<li class="home"><a href="#" onclick="setMovePage(1); return false;">홈</a></li>
+				</ul>
+				<ul>
+					<li class="sep introduce"><a href="#" onclick="setMovePage(2); return false;">회사소개</a></li>
+					<li class="management"><a href="#" onclick="setMovePage(4); return false;">시스템소개</a></li>
+				</ul>
+				<ul>
+					<li class="sep contact"><a  href="#" onclick="setMovePage(10); return false;">제휴문의</a></li>
+					<li class="faq"><a href="#" onclick="setMovePage(8); return false;">faq</a></li>
+				</ul>
+				<ul>
+					<li class="ico_facebook"><a href="#" onclick="alert('현재 페이스북 링크가 없습니다!'); return false;">facebook</a></li>
+					<li class="ico_playstore"><a href="#" onclick="alert('현재 플레이스토어 링크가 없습니다!'); return false;">playstore</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Header 종료 -->
+
+		<!-- Container 시작 -->
+		<div id="container">
+			<div id="vd" class="section fp-noscroll vd_box">
+				<div class="resize_area">
+					<h1 id="logo"><a href="./">LOGO</a></h1>
+					<div class="vd_text">
+						<p><span class="on">일</span> <span class="on">상</span> <span class="on">에</span><br /><span>가</span> <span>치</span> <span>를</span><br /><span>더</span> <span>하</span> <span>다</span></p>
+						<div class="over_line"></div>
+					</div>
+					<div class="vd_btn"></div>
+					<div class="vd_filter"></div>
+					<!--<div class="photoby">photograph by. David Tu sun Song</div>-->
+				</div>
+			</div>
+			<div class="section fp-noscroll page_v1">
+				<div class="wrap">
+					<div class="over_line"></div>
+					<div class="block">
+						<h2>LOGO</h2>
+						<div class="page_text">
+							<p>
+								<span class="p_title head"><strong>ABOUT</strong> <strong>US</strong></span>
+								<span class="p_title title"><strong>Travle Tour는 다양하고 낭만적인 여행지를 직접</strong> <strong>방문하였기에 아름다운 풍경을 바탕으로 여행지를 소개해드립니다.</strong></span>
+								<span>Travle Tour는 인생의 아름다운 추억을 남길 수 있는 여행지를 전달해드리고자 합니다.</span>
+								<span>회원님의 스타일에 맞춰 선정된 여행지를 전달함으로써 여행지에서의 추억을 풍요롭게</span>
+								<span>만들겠다는 것이 저희 Travle Tour의 비전입니다.</span>
+							</p>
+						</div>
+					</div>
+					<div class="hide_character kori">
+						<!--<div class="hide_kori_hand"></div>-->
+					</div>
+					<div class="hide_character bliiy">
+						<!--<div class="hide_bliiy_hand"></div>-->
+					</div>
+				</div>
+			</div>
+			<div class="section fp-auto-height page page_v2">
+				<div class="page_text">
+					<p><span>We are special</span>Do not be afraid to travel!</P>
+				</div>
+				<img src="./images/sens_img.png" width="100%" />
+			</div>
+			<div class="section page page_v3">
+				<div class="wrap">
+					<div class="hero_img"><img src="./images/hero_img.png?v=170125" /></div>
+					<div class="hero_line line_v1"></div>
+					<div class="hero_line line_v2"></div>
+					<div class="hero_line line_v3"></div>
+					<div class="hero_dot dot_v1"></div>
+					<div class="hero_dot dot_v2"></div>
+				</div>
+				<div class="page_text">
+					<h3><span>Travle Tour</span>'s Guide System</h3>
+					<p><strong>Travle Tour의 여행가이드 시스템</strong>은 기존의 책임없는 여행지 추천에서 벗어났습니다. 여행을 원하는 회원님께서 부담없이 아름다움을 즐길 수 있는 적합한 여행지를 직접 다녀온 후에 전달해드립니다.<br /><strong>Travle Tour의 아름다운 여행지를 직접 느껴보세요.</strong>
+					</p>
+				</div>
+			</div>
+			<div class="section fp-noscroll page_v4">
+				<div class="wrap">
+					<div class="page_text">
+						<div class="title_box">We're together</div>
+						<p>
+							<span>친구와 함께 떠나보세요.</span>
+							내 인생 친구와 함께 만드는<br />아름다운 여행지에서의 추억
+						</p>
+					</div>
+					<div class="filter"></div>
+				</div>
+			</div>
+			<div class="section fp-noscroll page_v5">
+				<div class="wrap">
+					<div class="page_text">
+						<div class="title_box">In search of me</div>
+						<p>
+							<span>나를 찾아 여행을 떠나보세요.</span>
+							새로운 나를 찾기 위한<br />나를 만들어가는 여행
+						</p>
+					</div>
+					<div class="filter"></div>
+				</div>
+			</div>
+			<div class="section fp-noscroll page page_v6">
+				<div class="page_text">
+					<p>
+						<strong>The Best Destinations</strong>
+					</p>
+				</div>
+				<ul class="outcome">
+					<li>
+						<strong>미국</strong>
+						<p>올해 특히 주목해야 할 세계 최대의 여행 가이드 ‘론리 플래닛 Lonely Planet’ 의 전문가들이, 상대적으로 과소 평가 되었던 매력적인 미국 여행지를 소개합니다.</p>
+						<ul>
+							<li>캘리포니아 레드우드 코스트/li>
+							<li>보이지</li>
+							<li>채타누가</li>
+							<li>플로리다주 스페이스 코스트</li>
+							<li>켄터키 버본 컨트리</li>
+						</ul>
+					</li>
+					<li>
+						<strong>유럽</strong>
+						<p>수많은 박물관들과 유적지, 풍경 그리고 다채로운 음식들까지. 많은 유럽 지역들 중 한국인들이 가장 선호하는 여행지들은 어디일까? 스카이스캐너에서 조사한 유럽의 선호 여행지들을 소개합니다.</p>
+						<ul>
+							<li>파리의 에펠탑, 몽마르뜨 언덕</li>
+							<li>런던의 코벤트 가든, 트라팔가 광장</li>
+							<li>바르셀로나의 구엘궁전, 까사 비센스</li>
+							<li>로마의 베네치아 궁전, 콜로세움</li>
+							<li>프라하의 프라하 성, 오를로이</li>
+						</ul>
+					</li>
+					<li>
+						<strong>터키</strong>
+						<p>터키를 다녀온 사람들은 다른 국가와 함께 방문하기보다 터키만! 가보라고 추천합니다. 그만큼 다양한 볼거리가 존재한다는 것. 이스탄불 외에도 수많은 매력을 가진 소도시를 파헤쳐봤습니다.</p>
+						<ul>
+							<li>낭만이 가득한 도시, 페티예</li>
+							<li>터키인들이 사랑하는 도시, 보드룸</li>
+							<li>재방문의사 200%, 카파도키</li>
+							<li>달콤한 향기가 느껴지는 지중해 연안 항구도시, 카쉬</li>
+							<li>터키에서 지중해를 가장 잘 느낄 수 있다는, 안탈리아</li>
+						</ul>
+					</li>
+					<li>
+						<strong>중국</strong>
+						<p>중국이라면 베이징밖에 몰랐던 분들께 선물해드립니다. 여행 떠나기 좋은 중국의 도시들은 상상 이상의 매력을 뽐내고 있답니다.</p>
+						<ul>
+							<li>맥주만 맛있는게 아닌, 칭다오</li>
+							<li>역사를 만나다, 남경</li>
+							<li>하늘엔 천당이있고, 땅엔 소주,<b>항주</b>가 있다.</li>
+							<li>대자연 속으로 빠지다, 장가계</li>
+							<li>계수나무 꽃이 흐드러지게 피는 곳, 계림</li>
+						</ul>
+					</li>
+					<li>
+						<strong>일본</strong>
+						<p>시끄럽고 복잡한 번화가 보다는 조용하고 느긋하게 일본 문화를 느낄 수 있는 일본 소도시. 소도시의 차분한 매력에 흠뻑 빠져보시는 것도 추천드립니다.</p>
+						<ul>
+							<li>'명탐정 코난'의 마을, 돗토리</li>
+							<li>과거 에도시대를 사는 역사마을, 다케하라</li>
+							<li>문화와 전통이 깊숙히 자리잡은, 마쓰야마</li>
+							<li>쿠슈 지방의 '베니스', 야나가와</li>
+							<li>독특한 자연환경의 휴양지, 가고시마</li>
+							<li>'후지산'과 '녹차'로 유명한, 시즈오카</li>
+                        </ul>
+					</li>
+					<li>
+						<strong>태국</strong>
+						<p>내륙 지역에 산재된 역사의 흔적, 에메랄드 빛의 바다와 파라다이스 같은 리조트가 위치한 해안 지역들을 저렴한 가격에 마음껏 즐길 수 있답니다.</p>
+						<ul>
+							<li>태국 최대 규모의 와불상, 왓포</li>
+							<li>에메랄드 빛의, 태국스럽지 않은 사원, 왓 프라 깨우</li>
+							<li>유럽 풍이 매우 인상적인, 방콕 왕궁</li>
+							<li>저렴한 물가로 배낭여행자들의 천국, 카오산 로드</li>
+							<li>아름다운 바닷가 마을의 반전있는 밤 풍경, 파타야</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="section fp-noscroll page page_v7">
+				<div class="page_text">
+					<p>
+						<span>FAQ</span>
+					</p>
+				</div>
+				<ul class="faq_tab">
+					<li class="on"><a href="#all">ALL</a></li>
+					<li><a href="#service">SERVICE</a></li>
+					<li><a href="#point">PAYMENT</a></li>
+					<li><a href="#etc">ETC</a></li>
+				</ul>
+				<ul class="faq_list">
+					<li class="all on">
+					<div class="explain">가장 많이 묻는<br />질문 및 답변</div>
+					<ul>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+					</ul>
+					</li>
+					<li class="service">
+					<div class="explain">서비스 관련<br />질문 및 답변</div>
+					<ul>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+					</ul>
+					</li>
+					<li class="point">
+					<div class="explain">결제 관련<br />질문 및 답변</div>
+					<ul>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+					</ul>
+					</li>
+					<li class="etc">
+					<div class="explain">기타<br />질문 및 답변</div>
+					<ul>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+						<li>
+							<a href="#open">질문</a>
+							<p>내용</p>
+						</li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="section fp-noscroll page page_v8">
+				<div class="sns fb">
+					<div class="bg">
+						<div>
+							<img src="./images/sns_fb_txt.png" />
+							<a href="#" onclick="alert('현재 페이스북 링크가 없습니다!'); return false;"><span>f</span><span>바로가기</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="sns ps">
+					<div class="bg">
+						<div>
+							<img src="./images/sns_ps_txt.png" />
+							<a href="#" onclick="alert('현재 플레이스토어 링크가 없습니다!'); return false;"><span>p</span><span>바로가기</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section fp-noscroll page page_v9">
+				<div id="map_view"></div>
+
+				<!-- Footer 시작 -->
+				<footer id="footer">
+					<div class="wrap_footer">
+						<span>Contact</span>
+						<dl>
+							<dt>tel</dt>
+							<dd>010.1234.5678</dd>
+							<dt>Email</dt>
+							<dd>email@email.com</dd>
+							<dt>Address</dt>
+							<dd>서울특별시 행복구 행복동</dd>
+						</dl>
+						<ul>
+							<li>
+								<ul class="social">
+									<li class="facebook"><a href="#" onclick="alert('현재 페이스북 링크가 없습니다!'); return false;">페이스북</a></li>
+									<li class="playstore"><a href="#" onclick="alert('현재 플레이스토어 링크가 없습니다!'); return false;">플레이스토어</a></li>
+								</ul>
+							</li>
+							<li>Copyright by (주)do2folio. All rights reserved.</li>
+							<li class="copyright">본 홈페이지에서 제공하는 모든 자료는 저작권법에 의하여<br />보호받는 저작물로서 이에 대한 무단 복제 및 배포를 원칙적으로 금합니다.</li>
+						</ul>
+						<ul>
+							<li class="intro"><a href="#" onclick="setMovePage(2); return false;">회사소개</a></li>
+							<li class="ad"><a href="#" onclick="setMovePage(4); return false;">시스템소개</a></li>
+						</ul>
+					</div>
+				</footer>
+				<!-- Footer 종료 -->
+				<div class="super_kori"><a href="#" onclick="setMovePage(1); return false;"></a></div>
+			</div>
+		</div>
+		<!-- Container 종료 -->
+	</div>
+	<script src="./masonry.pkgd.min.js"></script>
+</body>
+</html>
