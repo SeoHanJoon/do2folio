@@ -1,9 +1,16 @@
 const body = document.body;
 const wrapper = document.getElementById("wrapper");
 
-body.classList.add("load");
-wrapper.style.height = window.innerHeight + "px";
+// body.classList.add("load");
+// init
+resizeDiv();
 
-// window.onload = () => {
-//   body.classList.add("load");
-// };
+//resize main wrapper width window inner height.
+function resizeDiv() {
+  wrapper.style.height = window.innerHeight + "px";
+}
+window.addEventListener("resize", resizeDiv);
+
+window.onload = () => {
+  body.classList.add("load");
+};
