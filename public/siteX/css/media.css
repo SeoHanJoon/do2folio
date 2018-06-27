@@ -27,6 +27,9 @@
   .about__text {
     padding-left: 80px;
   }
+  .about__image::after {
+    display: none;
+  }
   .portfolio__project {
     width: 50%;
   }
@@ -79,6 +82,9 @@
   }
   .contact > .row {
     width: 80%;
+  }
+  body.lock .modal__container {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px) {
